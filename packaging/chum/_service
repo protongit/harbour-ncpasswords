@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  OBS source service for SailfishOS:Chum.
+
+  Upload this file as `_service` to the OBS package
+  (home:<username>/harbour-ncpasswords) and use the same revision that was
+  tagged in the repository. Chum builds a fixed revision; do not enable the
+  webhook for the Chum package.
+-->
+<services>
+  <service name="tar_git">
+    <param name="url">https://github.com/protongit/harbour-ncpasswords.git</param>
+    <param name="branch">main</param>
+    <param name="revision">v1.0.0</param>
+    <param name="debian">N</param>
+    <param name="dumb">N</param>
+  </service>
+</services>

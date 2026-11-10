@@ -1,0 +1,22 @@
+# Build outputs (qmake / Sailfish SDK)
+*.o
+*.so
+moc_*.cpp
+moc_*.h
+Makefile
+.qmake.stash
+documentation.list
+harbour-ncpasswords
+*.rpm
+
+# Sailfish SDK and build trees
+.sfdk/
+RPMS/
+build/
+deploy/
+
+# Editors and OS files
+*.swp
+*.swo
+*~
+.DS_Store

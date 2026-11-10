@@ -6,7 +6,7 @@ QT += quick qml network
 
 PKGCONFIG += sailfishapp libsodium sailfishsecrets
 
-DEFINES += APP_VERSION=\\\"1.0.1\\\"
+DEFINES += APP_VERSION=\\\"1.0.2\\\"
 INCLUDEPATH += src src/crypto src/api src/app src/storage src/cli
 
 SOURCES += \

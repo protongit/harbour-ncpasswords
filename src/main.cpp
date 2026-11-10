@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 #ifdef APP_VERSION
     QCoreApplication::setApplicationVersion(QStringLiteral(APP_VERSION));
 #else
-    QCoreApplication::setApplicationVersion(QStringLiteral("1.0.1"));
+    QCoreApplication::setApplicationVersion(QStringLiteral("1.0.2"));
 #endif
 
     bool selfTest = false;

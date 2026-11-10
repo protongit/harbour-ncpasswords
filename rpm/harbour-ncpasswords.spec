@@ -1,6 +1,6 @@
 Name:       harbour-ncpasswords
 Summary:    Nextcloud Passwords client for Sailfish OS
-Version:    1.0.1
+Version:    1.0.2
 Release:    1
 License:    MIT
 URL:        https://github.com/protongit/harbour-ncpasswords
@@ -59,7 +59,7 @@ Links:
 %qmake5_install
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
-cp -a /usr/lib64/libsodium.so.26* %{buildroot}%{_datadir}/%{name}/lib/
+cp -a %{_libdir}/libsodium.so.26* %{buildroot}%{_datadir}/%{name}/lib/
 install -Dpm0644 LICENSE %{buildroot}%{_datadir}/%{name}/LICENSE
 
 %{__strip} %{buildroot}%{_bindir}/%{name}
@@ -77,6 +77,9 @@ desktop-file-install --delete-original       \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Nov 10 2026 protongit <protongit@users.noreply.github.com> - 1.0.2-1
+- Build for armv7hl too, using %{_libdir} for the bundled libsodium
+
 * Tue Nov 10 2026 protongit <protongit@users.noreply.github.com> - 1.0.1-1
 - Bundle libsodium for Jolla Store (Harbour) packaging
 - Remove the unused fingerprint page and its restricted QML import

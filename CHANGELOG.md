@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2 - 2026-11-10
+
+- Add an armv7hl build for 32-bit Sailfish OS devices
+- Use `%{_libdir}` for the bundled libsodium so both architectures build
+
 ## 1.0.1 - 2026-11-10
 
 - Bundle libsodium inside the app so the package passes Jolla Store (Harbour)

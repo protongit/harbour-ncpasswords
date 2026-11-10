@@ -11,7 +11,7 @@
   <service name="tar_git">
     <param name="url">https://github.com/protongit/harbour-ncpasswords.git</param>
     <param name="branch">main</param>
-    <param name="revision">v1.0.1</param>
+    <param name="revision">v1.0.2</param>
     <param name="debian">N</param>
     <param name="dumb">N</param>
   </service>

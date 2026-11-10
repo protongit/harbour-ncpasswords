@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 - 2026-11-10
+
+- Bundle libsodium inside the app so the package passes Jolla Store (Harbour)
+  validation and does not depend on Chum
+- Remove the unused fingerprint page and its restricted QML import
+
 ## 1.0.0 - 2026-11-10
 
 First public release.

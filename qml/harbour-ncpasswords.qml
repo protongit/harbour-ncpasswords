@@ -16,16 +16,11 @@ ApplicationWindow {
             vault.logDebug("navigate deferred busy")
             return
         }
-        vault.logDebug("navigate state=" + vault.state + " fp=" + vault.fingerprintRequired
-                       + " current=" + current)
+        vault.logDebug("navigate state=" + vault.state + " current=" + current)
 
         if (vault.state === "locked" && vault.pinRequired && current !== "pin") {
             pageStack.replace(Qt.resolvedUrl("pages/PinPage.qml"))
-        } else if (vault.state === "locked" && vault.fingerprintRequired
-                && current !== "fingerprint") {
-            pageStack.replace(Qt.resolvedUrl("pages/FingerprintPage.qml"))
-        } else if (vault.state === "locked" && !vault.fingerprintRequired
-                   && !vault.pinRequired && current !== "unlock") {
+        } else if (vault.state === "locked" && !vault.pinRequired && current !== "unlock") {
             pageStack.replace(Qt.resolvedUrl("pages/UnlockPage.qml"))
         } else if (vault.state === "unlocked" && current !== "vault") {
             pageStack.replace(Qt.resolvedUrl("pages/VaultPage.qml"))

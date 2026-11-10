@@ -6,7 +6,7 @@ QT += quick qml network
 
 PKGCONFIG += sailfishapp libsodium sailfishsecrets
 
-DEFINES += APP_VERSION=\\\"1.0.0\\\"
+DEFINES += APP_VERSION=\\\"1.0.1\\\"
 INCLUDEPATH += src src/crypto src/api src/app src/storage src/cli
 
 SOURCES += \
@@ -45,7 +45,6 @@ DISTFILES += \
     qml/pages/VaultPage.qml \
     qml/pages/EntryPage.qml \
     qml/pages/EditPage.qml \
-    qml/pages/FingerprintPage.qml \
     qml/pages/PinPage.qml \
     qml/pages/PinSettingsPage.qml \
     qml/pages/FolderPage.qml \

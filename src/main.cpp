@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 #ifdef APP_VERSION
     QCoreApplication::setApplicationVersion(QStringLiteral(APP_VERSION));
 #else
-    QCoreApplication::setApplicationVersion(QStringLiteral("1.0.0"));
+    QCoreApplication::setApplicationVersion(QStringLiteral("1.0.1"));
 #endif
 
     bool selfTest = false;
@@ -143,7 +143,6 @@ int main(int argc, char *argv[])
                 << QStringLiteral("pages/VaultPage.qml")
                 << QStringLiteral("pages/EntryPage.qml")
                 << QStringLiteral("pages/EditPage.qml")
-                << QStringLiteral("pages/FingerprintPage.qml")
                 << QStringLiteral("pages/PinPage.qml")
                 << QStringLiteral("pages/PinSettingsPage.qml")
                 << QStringLiteral("pages/FolderPage.qml")

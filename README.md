@@ -36,6 +36,12 @@ client-side encrypted vaults on the device and never sends data anywhere else.
 
 ## Install
 
+### Jolla Store
+
+The package passes the Jolla Store (Harbour) validator and is prepared for
+submission; it will be installable from the Store app once the review is
+complete. See `packaging/harbour/README.md` for the checklist.
+
 ### SailfishOS:Chum
 
 Once the package is published, install it from the Chum GUI or with:
@@ -124,6 +130,7 @@ Each language lives in `qml/js/locales/<code>.js` and exports `languageName`,
 - The app talks only to the Nextcloud server you configure. There is no
   telemetry or crash reporting.
 - Report security issues privately; see [SECURITY.md](SECURITY.md).
+- The privacy policy is in [PRIVACY.md](PRIVACY.md).
 
 ## Licence
 

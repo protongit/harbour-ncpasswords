@@ -1,15 +1,17 @@
 Name:       harbour-ncpasswords
 Summary:    Nextcloud Passwords client for Sailfish OS
-Version:    1.0.0
+Version:    1.0.1
 Release:    1
 License:    MIT
 URL:        https://github.com/protongit/harbour-ncpasswords
 Source0:    %{name}-%{version}.tar.bz2
 
+# Bundle libsodium in the app-private lib directory: it is not part of the
+# Sailfish OS base image and Harbour does not allow requiring it from Chum.
+%define __provides_exclude_from ^%{_datadir}/%{name}/lib/.*$
+%define __requires_exclude ^libsodium\.so.*$
+
 Requires:   sailfishsilica-qt5 >= 0.10.9
-Requires:   libsodium
-Requires:   libsailfishsecrets
-Requires:   qt5-qtnetwork
 
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -56,20 +58,29 @@ Links:
 %install
 %qmake5_install
 
+mkdir -p %{buildroot}%{_datadir}/%{name}/lib
+cp -a /usr/lib64/libsodium.so.26* %{buildroot}%{_datadir}/%{name}/lib/
+install -Dpm0644 LICENSE %{buildroot}%{_datadir}/%{name}/LICENSE
+
+%{__strip} %{buildroot}%{_bindir}/%{name}
+%{__strip} --strip-unneeded %{buildroot}%{_datadir}/%{name}/lib/libsodium.so.26.4.0
+
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications  \
   %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
 %defattr(-,root,root,-)
-%license LICENSE
-%doc README.md CHANGELOG.md
 %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Nov 10 2026 protongit <protongit@users.noreply.github.com> - 1.0.1-1
+- Bundle libsodium for Jolla Store (Harbour) packaging
+- Remove the unused fingerprint page and its restricted QML import
+
 * Tue Nov 10 2026 protongit <protongit@users.noreply.github.com> - 1.0.0-1
 - First public release
 
